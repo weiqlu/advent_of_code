@@ -1,24 +1,25 @@
 from pathlib import Path
 
-def main() -> str: 
+def main() -> int: 
     count = 0
-    rotation = 50
+    position = 50
 
     test_input = Path(__file__).parent / "day1.txt"
     with open(test_input, "r") as file: 
         for line in file:
             direction = line[0]
-            num = int(line[1:])
+            distance = int(line[1:])
+
+            prev_distance = position
 
             if direction == 'L': 
-                rotation -= num
+                position -= distance
+                count += (prev_distance - 1) // 100 - (position - 1) // 100
             elif direction == 'R': 
-                rotation += num
+                position += distance
+                count += (position) // 100 - prev_distance // 100
 
-            rotation = rotation % 100
-            if rotation == 0:
-                count += 1
-    
+            position %= 100
     return count
 
 if __name__ == "__main__": 
