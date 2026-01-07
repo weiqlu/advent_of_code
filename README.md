@@ -1,7 +1,6 @@
-
 # Advent of Code (2025)
 
-This repo is just my [Advent of Code](https://adventofcode.com/) solutions.
+This repo contains my [Advent of Code](https://adventofcode.com/) solutions - daily programming puzzles released each December.
 
 For each day, I keep:
 - the solution code
